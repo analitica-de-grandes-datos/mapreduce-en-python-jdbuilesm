@@ -5,16 +5,16 @@ import sys
 biggest = {}
 smaller = {}
 
-def set_bigger_smaller_amount(biggest_amount, smaller, actual_element):
+def set_bigger_smaller(biggest, smaller, actual_element):
     element_array = actual_element.split("*")
-    biggest_amount[element_array[0]] = max(
-        float(biggest_amount.get(element_array[0]) or 0), float(element_array[1]))
-    smaller_amount[element_array[0]] = min(
-        float(smaller_amount.get(element_array[0]) or 10000), float(element_array[1]))
-    return biggest_amount, smaller_amount
+    biggest[element_array[0]] = max(
+        float(biggest.get(element_array[0]) or 0), float(element_array[1]))
+    smaller[element_array[0]] = min(
+        float(smaller.get(element_array[0]) or 10000), float(element_array[1]))
+    return biggest, smaller
 
 for line in sys.stdin:
-    set_bigger_smaller_amount(biggest, smaller, line)
+    set_bigger_smaller(biggest, smaller, line)
 
 for max, min in zip(biggest.items(), smaller.items()):
     print( max[0] + "	" + str(max[1]) + "	" + str(min[1]) )
