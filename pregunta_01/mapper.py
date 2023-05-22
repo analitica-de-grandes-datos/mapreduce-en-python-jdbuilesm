@@ -3,9 +3,9 @@
 #
 import sys
 
-def purpose_amount(x):
+def amount(x):
     return x[2]
 
 for line in sys.stdin:
     result = line.split(',')
-    print(purpose_amount(result))
+    print(amount(result))
