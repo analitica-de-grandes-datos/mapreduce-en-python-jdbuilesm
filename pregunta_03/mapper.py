@@ -1,6 +1,8 @@
 #
 # >>> Escriba el codigo del mapper a partir de este punto <<<
 #
+import sys
+
 def clr_spaces(x):
     x = x.replace("\n", "")
     x = x.replace("\r", "")
